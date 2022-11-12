@@ -31,25 +31,17 @@
                 <x-input type="text"
                          wire:model.defer="name"
                          placeholder="Enter name"/>
-                @error('name')
-                <x-error>
-                    {{ $message }}
-                </x-error>
-                @enderror
+                <x-errors key="name"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="email">
                     {{ __('Email') }}
                 </x-label-required>
-                <x-input type="email"
+                <x-input type="text"
                          wire:model="email"
                          autocomplete="off"
                          placeholder="Enter email"/>
-                @error('email')
-                <x-error>
-                    {{ $message }}
-                </x-error>
-                @enderror
+                <x-errors key="email"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="password">
@@ -58,11 +50,7 @@
                 <x-input type="password"
                          wire:model.defer="password"
                          placeholder="Enter password"/>
-                @error('password')
-                <x-error>
-                    {{ $message }}
-                </x-error>
-                @enderror
+                <x-errors key="password"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="confirm_password">
@@ -71,11 +59,7 @@
                 <x-input type="password"
                          wire:model.defer="password_confirmation"
                          placeholder="Enter password again"/>
-                @error('password_confirmation')
-                <x-error>
-                    {{ $message }}
-                </x-error>
-                @enderror
+                <x-errors key="password_confirmation"/>
             </x-input-div>
             <x-save-button/>
         </form>

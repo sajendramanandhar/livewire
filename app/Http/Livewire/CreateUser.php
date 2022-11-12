@@ -24,7 +24,7 @@ class CreateUser extends Component
                 'required',
                 'max:255',
                 'string',
-                'email',
+                'email:rfc,dns',
                 'unique:'.User::class,
             ],
             'password' => User::passwordRules(),
@@ -43,5 +43,12 @@ class CreateUser extends Component
         $this->reset();
 
         session()->flash('success', 'User created successfully.');
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName, [
+            'email' => ['unique:'.User::class],
+        ]);
     }
 }

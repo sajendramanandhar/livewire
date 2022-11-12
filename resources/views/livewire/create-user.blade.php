@@ -1,4 +1,5 @@
 <div>
+    <x-alerts/>
     <x-slot name="title">
         Add User
     </x-slot>
@@ -41,7 +42,8 @@
                     {{ __('Email') }}
                 </x-label-required>
                 <x-input type="email"
-                         wire:model.defer="email"
+                         wire:model="email"
+                         autocomplete="off"
                          placeholder="Enter email"/>
                 @error('email')
                 <x-error>
@@ -75,51 +77,7 @@
                 </x-error>
                 @enderror
             </x-input-div>
-            @if (session('success'))
-                <div
-                    class="fixed flex bottom-4 left-0 w-full justify-center px-3"
-                    id="{{ rand() }}"
-                    x-data="{ alert : true }"
-                    x-show="alert"
-                    x-transition:leave="duration-500">
-                    <div
-                        :class="{'animate__flash': alert, 'animate__fadeOut': !alert}"
-                        class="bg-emerald-200 dark:bg-emerald-700 p-3 rounded-md dark:text-white animate__animated w-full sm:w-8/12 md:w-7-12 lg:w-6/12 xl:w-4/12 flex justify-between"
-                        style="animation-iteration-count: 1.5">
-                        <div>
-                            {{ session('success') }}
-                        </div>
-                        <div class="flex items-center ml-2">
-                            <a href="#" @click="alert = false">
-                                <svg fill="none" class="w-3 h-3" viewBox="0 0 48 48"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="white" fill-opacity="0.01" height="48" width="48">
-                                    </rect>
-                                    <path d="M8 8L40 40" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                    <path d="M8 40L40 8" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            <button type="submit"
-                    wire:loading.class="cursor-not-allowed"
-                    wire:loading.attr="disabled"
-                    class="inline-flex items-center px-4 py-2.5 font-bold rounded-md text-white dark:text-zinc-300 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800 transition ease-in-out duration-150">
-                <div wire:loading>
-                    <svg class="animate-spin h-4 w-4 text-white mr-2" xmlns="http://www.w3.org/2000/svg"
-                         fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                </div>
-                Save
-            </button>
+            <x-save-button/>
         </form>
     </div>
 </div>

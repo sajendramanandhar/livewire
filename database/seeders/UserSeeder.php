@@ -16,13 +16,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::firstOrCreate(
-            ["email" => "admin@example.com"],
+            ['email' => 'admin@example.com'],
             [
-                "name" => "developer",
-                "email" => "admin@example.com",
-                "email_verified_at" => now(),
-                "password" => bcrypt("password"),
-                "remember_token" => Str::random(30),
+                'name' => 'developer',
+                'email' => 'admin@example.com',
+                'email_verified_at' => now(),
+                'password' => 'password',
+                'remember_token' => Str::random(30),
             ]
         );
 

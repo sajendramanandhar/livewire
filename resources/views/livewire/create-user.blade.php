@@ -28,37 +28,45 @@
                 <x-label-required for="name">
                     {{ __('Name') }}
                 </x-label-required>
-                <x-input type="text"
-                         wire:model.defer="name"
-                         placeholder="Enter name"/>
+                <x-input maxlength="255"
+                         placeholder="Enter name"
+                         required
+                         type="text"
+                         wire:model.defer="name"/>
                 <x-errors key="name"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="email">
                     {{ __('Email') }}
                 </x-label-required>
-                <x-input type="email"
-                         wire:model="email"
-                         autocomplete="off"
-                         placeholder="Enter email"/>
+                <x-input autocomplete="off"
+                         maxlength="255"
+                         placeholder="Enter email"
+                         required
+                         type="email"
+                         wire:model="email"/>
                 <x-errors key="email"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="password">
                     {{ __('Password') }}
                 </x-label-required>
-                <x-input type="password"
-                         wire:model.defer="password"
-                         placeholder="Enter password"/>
+                <x-input maxlength="40"
+                         placeholder="Enter password"
+                         required
+                         type="password"
+                         wire:model.defer="password"/>
                 <x-errors key="password"/>
             </x-input-div>
             <x-input-div>
                 <x-label-required for="confirm_password">
                     {{ __('Confirm Password') }}
                 </x-label-required>
-                <x-input type="password"
-                         wire:model.defer="password_confirmation"
-                         placeholder="Enter password again"/>
+                <x-input maxlength="40"
+                         placeholder="Enter password again"
+                         required
+                         type="password"
+                         wire:model.defer="password_confirmation"/>
                 <x-errors key="password_confirmation"/>
             </x-input-div>
             <x-save-button/>

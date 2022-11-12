@@ -37,7 +37,7 @@
                 <x-label-required for="email">
                     {{ __('Email') }}
                 </x-label-required>
-                <x-input type="text"
+                <x-input type="email"
                          wire:model="email"
                          autocomplete="off"
                          placeholder="Enter email"/>

@@ -7,7 +7,7 @@
     <div
         :class="{'animate__flash': alert, 'animate__fadeOut': !alert}"
         {{ $attributes->merge(['class' => 'p-3 rounded-md dark:text-white animate__animated w-full sm:w-8/12 md:w-7-12 lg:w-6/12 xl:w-4/12 flex justify-between']) }}
-        style="animation-iteration-count: 1.5">
+        style="animation-iteration-count: 2">
         <div>
             {{ $slot }}
         </div>

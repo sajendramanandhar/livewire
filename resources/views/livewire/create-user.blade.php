@@ -3,11 +3,11 @@
     <x-slot name="title">
         Add User
     </x-slot>
-    <div class="flex justify-center py-4">
-        <h1 class="text-xl font-semibold dark:text-zinc-300">
+    <x-h1-div>
+        <x-h1>
             Add User
-        </h1>
-    </div>
+        </x-h1>
+    </x-h1-div>
     <div class="sm:w-10/12 md:w-8/12 lg:w-6/12 sm:mx-auto">
         <div
             class="dark:text-zinc-300 border-b border-zinc-200 dark:border-zinc-800 p-4 flex justify-center mb-8 space-x-4">
@@ -15,7 +15,7 @@
                 Dashboard
             </a>
             <div class="mx-4">-</div>
-            <a href="#">
+            <a href="{{ route('users.index') }}">
                 Users
             </a>
             <div class="mx-4">-</div>

@@ -1,7 +1,6 @@
-<button type="submit"
-        wire:loading.class="cursor-not-allowed"
+<x-blue-button type="submit"
         wire:loading.attr="disabled"
-        class="inline-flex items-center px-4 py-2.5 font-bold rounded-md text-white dark:text-zinc-300 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800 transition ease-in-out duration-150 disabled:dark:bg-blue-500 disabled:bg-blue-400">
+        class="inline-flex items-center">
     <div wire:loading>
         <svg class="animate-spin h-4 w-4 text-white mr-2" xmlns="http://www.w3.org/2000/svg"
              fill="none" viewBox="0 0 24 24">
@@ -12,4 +11,4 @@
         </svg>
     </div>
     Save
-</button>
+</x-blue-button>

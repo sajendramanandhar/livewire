@@ -22,7 +22,7 @@
     </style>
 </head>
 <body class="dark:bg-black">
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 dark:text-zinc-300">
     {{ $slot }}
 </div>
 @livewireScripts

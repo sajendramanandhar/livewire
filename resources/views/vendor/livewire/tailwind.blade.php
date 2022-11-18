@@ -29,7 +29,7 @@
                 </span>
             </div>
 
-            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div class="hidden md:flex-1 sm:flex sm:items-center sm:justify-between">
                 <div>
                     <p class="leading-5">
                         <span>{!! __('Showing') !!}</span>
@@ -68,7 +68,7 @@
                             {{-- "Three Dots" Separator --}}
                             @if (is_string($element))
                                 <span aria-disabled="true">
-                                    <span class="relative inline-flex items-center px-4 py-2 -ml-px font-medium border cursor-default leading-5 select-none">{{ $element }}</span>
+                                    <span class="relative inline-flex items-center px-4 py-2 -ml-px font-medium border dark:border-zinc-800 cursor-default leading-5 select-none">{{ $element }}</span>
                                 </span>
                             @endif
 

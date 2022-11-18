@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Closure;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -27,7 +28,15 @@ class UserSeeder extends Seeder
         );
 
         User::factory()
-            ->count(50)
-            ->create();
+            ->count(1000)
+            ->create([
+                'created_at' => $this->getRandomDates(),
+                'updated_at' => $this->getRandomDates(),
+            ]);
+    }
+
+    private function getRandomDates(): Closure
+    {
+        return fn () => now()->subDays(rand(0, 100));
     }
 }

@@ -18,11 +18,38 @@
             Users
         </span>
     </div>
-    <a href="{{ route('users.create') }}">
-        <x-blue-button class="mb-4">
-            Add User
-        </x-blue-button>
-    </a>
+    <div class="mb-4 flex flex-col gap-y-4 md:flex-row md:gap-x-4">
+        <div>
+            <a href="{{ route('users.create') }}">
+                <x-blue-button class="w-32">
+                    Add User
+                </x-blue-button>
+            </a>
+        </div>
+        <x-input wire:model="keyword"
+                 type="text"
+                 placeholder="Search users"
+                 class="w-full"/>
+        <select wire:model="column"
+                class="p-3 w-full bg-zinc-200 rounded-md dark:placeholder-zinc-500 dark:bg-zinc-800 focus:outline-none focus:outline-zinc-400 focus:outline-offset-0 dark:focus:outline-zinc-600 mb-1 dark:text-zinc-400">
+            <option value="">Select</option>
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+            <option value="created_at">Created At</option>
+        </select>
+        <select wire:model="sortOrder"
+                class="p-3 w-full bg-zinc-200 rounded-md dark:placeholder-zinc-500 dark:bg-zinc-800 focus:outline-none focus:outline-zinc-400 focus:outline-offset-0 dark:focus:outline-zinc-600 mb-1 dark:text-zinc-400">
+            <option value="asc">ASC</option>
+            <option value="desc">DESC</option>
+        </select>
+        <select wire:model="perPage"
+                class="p-3 w-full bg-zinc-200 rounded-md dark:placeholder-zinc-500 dark:bg-zinc-800 focus:outline-none focus:outline-zinc-400 focus:outline-offset-0 dark:focus:outline-zinc-600 mb-1 dark:text-zinc-400">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
     <div class="overflow-x-auto w-full mb-8 border dark:border-zinc-800 rounded-2xl">
         <table class="w-full">
             <thead>
@@ -31,10 +58,10 @@
                     Name
                 </x-th>
                 <x-th>
-                    Created At
+                    Email
                 </x-th>
                 <x-th>
-                    Updated At
+                    Created At
                 </x-th>
                 <x-th>
                     Status
@@ -51,10 +78,10 @@
                         {{ $user->name }}
                     </x-td>
                     <x-td>
-                        {{ $user->created_at->diffForHumans() }}
+                        {{ $user->email }}
                     </x-td>
                     <x-td>
-                        {{ $user->updated_at->diffForHumans() }}
+                        {{ $user->created_at }}
                     </x-td>
                     <x-td>
                         Active

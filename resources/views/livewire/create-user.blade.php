@@ -44,7 +44,7 @@
                          placeholder="Enter email"
                          required
                          type="email"
-                         wire:model="email"/>
+                         wire:model.lazy="email"/>
                 <x-errors key="email"/>
             </x-input-div>
             <x-input-div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,5 +46,14 @@ class User extends Authenticatable
     public static function passwordRules(): array
     {
         return ['required', Password::default(), 'max:40', 'confirmed'];
+    }
+
+    public function scopeSearch(Builder $query, string $keyword): Builder
+    {
+        return $keyword
+            ? $query
+                ->where('name', 'like', $keyword.'%')
+                ->orWhere('email', 'like', $keyword.'%')
+            : $query;
     }
 }

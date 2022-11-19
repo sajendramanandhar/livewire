@@ -24,6 +24,11 @@ class ShowUsers extends Component
         $this->resetPage();
     }
 
+    public function updated()
+    {
+        $this->resetPage();
+    }
+
     public function render(): View
     {
         return view('livewire.show-users', [

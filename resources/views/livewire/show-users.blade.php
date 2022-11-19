@@ -28,11 +28,10 @@
         </div>
         <x-input wire:model="keyword"
                  type="text"
-                 placeholder="Search users"
+                 placeholder="Search Users"
                  class="w-full"/>
         <select wire:model="column"
                 class="p-3 w-full bg-zinc-200 rounded-md dark:placeholder-zinc-500 dark:bg-zinc-800 focus:outline-none focus:outline-zinc-400 focus:outline-offset-0 dark:focus:outline-zinc-600 mb-1 dark:text-zinc-400">
-            <option value="">Select</option>
             <option value="name">Name</option>
             <option value="email">Email</option>
             <option value="created_at">Created At</option>

@@ -20,13 +20,7 @@ class CreateUser extends Component
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => [
-                'required',
-                'max:255',
-                'string',
-                'email:rfc,dns',
-                'unique:'.User::class,
-            ],
+            'email' => $this->emailRules(),
             'password' => User::passwordRules(),
         ];
     }
@@ -45,10 +39,21 @@ class CreateUser extends Component
         session()->flash('success', 'User created successfully.');
     }
 
-    public function updated($propertyName)
+    public function updated($propertyName): void
     {
         $this->validateOnly($propertyName, [
-            'email' => ['unique:'.User::class],
+            'email' => $this->emailRules(),
         ]);
+    }
+
+    private function emailRules(): array
+    {
+        return [
+            'required',
+            'max:255',
+            'string',
+            'email:rfc,dns',
+            'unique:' . User::class,
+        ];
     }
 }

@@ -39,9 +39,9 @@ class CreateUser extends Component
         session()->flash('success', 'User created successfully.');
     }
 
-    public function updated($propertyName): void
+    public function updated($property): void
     {
-        $this->validateOnly($propertyName, [
+        $this->validateOnly($property, [
             'email' => $this->emailRules(),
         ]);
     }

@@ -8,16 +8,15 @@
             Add User
         </x-h1>
     </x-h1-div>
-    <div
-        class="dark:text-zinc-300 border-b border-zinc-200 dark:border-zinc-800 p-4 flex justify-center mb-8 space-x-4">
+    <x-breadcrumb-div>
         <a href="#">
             Dashboard
         </a>
-        <div class="mx-4">-</div>
-        <span class="text-zinc-500">
+        <x-breadcrumb-separator-div/>
+        <x-breadcrumb-disabled>
             Users
-        </span>
-    </div>
+        </x-breadcrumb-disabled>
+    </x-breadcrumb-div>
     <div class="mb-4 flex flex-col gap-y-4 md:flex-row md:gap-x-4">
         <div>
             <a href="{{ route('users.create') }}">
@@ -86,7 +85,7 @@
                         Active
                     </x-td>
                     <x-td class="flex space-x-4 sm:space-x-3 flex justify-center">
-                        <a href="#" title="Edit"
+                        <a href="{{ route('users.edit',['user' => $user]) }}" title="Edit"
                            edit-button-1="">
                             <svg fill="none" class="w-5 h-5" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                 <rect fill="white" fill-opacity="0.01" height="48" width="48">

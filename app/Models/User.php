@@ -43,6 +43,14 @@ class User extends Authenticatable
         return new Attribute(set: fn ($value) => bcrypt($value));
     }
 
+    public static function rules(): array
+    {
+        return [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'max:255', 'string', 'email:filter'],
+        ];
+    }
+
     public static function passwordRules(): array
     {
         return ['required', Password::default(), 'max:40', 'confirmed'];

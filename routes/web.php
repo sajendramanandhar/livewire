@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\CreateUser;
+use App\Http\Livewire\EditUser;
 use App\Http\Livewire\ShowUsers;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', ShowUsers::class);
 Route::get('/users', ShowUsers::class)->name('users.index');
 Route::get('users/create', CreateUser::class)->name('users.create');
+Route::get('users/{user}/edit', EditUser::class)->name('users.edit');

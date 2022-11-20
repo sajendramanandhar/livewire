@@ -7,6 +7,7 @@
     "devDependencies": {
         "@prettier/plugin-php": "^0.19.2",
         "alpinejs": "^3.10.5",
+        "animate.css": "^4.1.1",
         "autoprefixer": "^10.4.13",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.6.0",

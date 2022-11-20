@@ -125,26 +125,22 @@
                                 <div
                                     class="pt-2 pb-4 px-4 mx-4 w-full bg-white dark:bg-black animate__animated animate__zoomIn sm:w-6/12 lg:w-4/12 xl:w-3/12"
                                     @click.away="modal = false">
-                                    <div class="mb-2 text-lg">
+                                    <div class="flex mb-2 text-lg">
                                         Are you sure you want to delete?
                                     </div>
                                     <div>
                                         <div class="flex">
                                             <form action="https://tenant-1.pasal.tk/admin/product-categories/1"
                                                   class="delete-form" method="post">
-                                                <input type="hidden" name="_token"
-                                                       value="5rkIifdTB3sCjcGlPmu8HhSxLeTLxdBRvNUfexDc"> <input
-                                                    type="hidden" name="_method" value="delete">
-                                                <button
-                                                    class="focus:outline-none px-4 p-2 capitalize text-white whitespace-nowrap bg-red-600 hover:bg-red-700 mr-3 w-20">
+                                                <input type="hidden" name="_method" value="delete">
+                                                <x-red-button class="mr-3 w-20">
                                                     Yes
-                                                </button>
+                                                </x-red-button>
                                             </form>
-                                            <button
-                                                class="focus:outline-none px-4 p-2 capitalize text-white whitespace-nowrap bg-blue-600 hover:bg-blue-500 w-20"
-                                                @click="modal = false">
+                                            <x-blue-button class="w-20 capitalize"
+                                                           @click="modal = false">
                                                 No
-                                            </button>
+                                            </x-blue-button>
                                         </div>
                                     </div>
                                 </div>

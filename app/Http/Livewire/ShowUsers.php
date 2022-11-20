@@ -19,6 +19,16 @@ class ShowUsers extends Component
 
     public int $perPage = 10;
 
+    protected function getListeners(): array
+    {
+        return ['deleted'];
+    }
+
+    public function deleted()
+    {
+        session()->flash('success', 'User deleted successfully.');
+    }
+
     public function updatingKeyword(): void
     {
         $this->resetPage();

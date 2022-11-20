@@ -9,6 +9,7 @@ use Livewire\Component;
 class DeleteUser extends Component
 {
     public bool $modalStatus = false;
+
     public User $user;
 
     public function render(): View
@@ -19,7 +20,9 @@ class DeleteUser extends Component
     public function submit(): void
     {
         $this->user->delete();
+
         $this->modalStatus = false;
+
         $this->emitUp('deleted');
     }
 }

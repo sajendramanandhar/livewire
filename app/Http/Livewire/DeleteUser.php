@@ -26,4 +26,3 @@ class DeleteUser extends Component
         $this->emitUp('deleted');
     }
 }
-

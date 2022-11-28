@@ -3,7 +3,7 @@
         @php(isset($this->numberOfPaginatorsRendered[$paginator->getPageName()]) ? $this->numberOfPaginatorsRendered[$paginator->getPageName()]++ : $this->numberOfPaginatorsRendered[$paginator->getPageName()] = 1)
 
         <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
-            <div class="flex w-full justify-center sm:hidden space-x-4">
+            <div class="flex w-full justify-center lg:hidden space-x-4">
                 <span>
                     @if ($paginator->onFirstPage())
                         <div class="px-4 py-2.5 font-bold rounded-md text-white text-center dark:text-zinc-300 bg-blue-400 transition ease-in-out duration-150 cursor-not-allowed w-32">
@@ -29,7 +29,7 @@
                 </span>
             </div>
 
-            <div class="hidden md:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div class="hidden md:flex-1 lg:flex lg:items-center lg:justify-between">
                 <div>
                     <p class="leading-5">
                         <span>{!! __('Showing') !!}</span>

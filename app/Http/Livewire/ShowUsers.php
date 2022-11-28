@@ -21,12 +21,12 @@ class ShowUsers extends Component
 
     protected function getListeners(): array
     {
-        return ['deleted'];
+        return ['submitted'];
     }
 
-    public function deleted()
+    public function submitted(string $message)
     {
-        session()->flash('success', 'User deleted successfully.');
+        session()->flash('success', $message);
     }
 
     public function updatingKeyword(): void

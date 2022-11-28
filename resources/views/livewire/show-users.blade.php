@@ -18,17 +18,10 @@
         </x-breadcrumb-disabled>
     </x-breadcrumb-div>
     <div class="mb-4 flex flex-col gap-y-4 md:flex-row md:gap-x-4">
-        <div>
-            <a href="{{ route('users.create') }}">
-                <x-blue-button class="w-32">
-                    {{ __('Add User') }}
-                </x-blue-button>
-            </a>
-        </div>
+        <livewire:create-user/>
         <x-input wire:model="keyword"
                  type="text"
-                 placeholder="Search Users"
-                 class="w-full"/>
+                 placeholder="Search Users"/>
         <select wire:model="column"
                 class="p-3 w-full bg-zinc-200 rounded-md dark:placeholder-zinc-500 dark:bg-zinc-800 focus:outline-none focus:outline-zinc-400 focus:outline-offset-0 dark:focus:outline-zinc-600 mb-1 dark:text-zinc-400">
             <option value="name">

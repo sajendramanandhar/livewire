@@ -23,6 +23,6 @@ class DeleteUser extends Component
 
         $this->modalStatus = false;
 
-        $this->emitUp('submitted', 'User deleted successfully.');
+        $this->emitUp('deleted');
     }
 }

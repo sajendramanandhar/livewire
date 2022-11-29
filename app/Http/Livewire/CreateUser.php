@@ -16,8 +16,6 @@ class CreateUser extends Component
 
     public string $password_confirmation = '';
 
-    public bool $modalStatus = false;
-
     protected function rules(): array
     {
         $rules = User::rules();
@@ -38,8 +36,6 @@ class CreateUser extends Component
 
         $this->reset();
 
-        $this->modalStatus = false;
-
-        $this->emitUp('submitted', 'User created successfully.');
+        session()->flash('success', 'User created successfully.');
     }
 }

@@ -1,5 +1,6 @@
-<x-button wire:loading.attr="disabled"
-        {{ $attributes->merge(['class' => 'inline-flex items-center justify-center']) }}>
+<x-blue-button type="submit"
+        wire:loading.attr="disabled"
+        class="inline-flex items-center">
     <div wire:loading>
         <svg class="animate-spin h-4 w-4 text-white mr-2" xmlns="http://www.w3.org/2000/svg"
              fill="none" viewBox="0 0 24 24">
@@ -9,5 +10,5 @@
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
     </div>
-    {{ $slot }}
-</x-button>
+    Save
+</x-blue-button>

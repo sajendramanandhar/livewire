@@ -15,25 +15,31 @@
                   stroke-width="2" stroke-linejoin="round"></path>
         </svg>
     </a>
-    <x-modal-background>
-        <x-modal class="pt-4 pb-6 px-6 mx-4 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 rounded-2xl">
-            <div class="flex mb-4 text-lg">
+    <div
+        class="fixed inset-0 z-20 bg-opacity-75 bg-zinc-500 dark:bg-zinc-600 dark:bg-opacity-95 flex justify-center items-center"
+        @keydown.esc.window.prevent="modal = false" x-show="modal" style="display: none;"
+        x-transition:leave="duration-500">
+        <div
+            :class="{'animate__zoomIn': modal, 'animate__zoomOut': !modal}"
+            class="pt-2 pb-4 px-4 mx-4 w-full bg-white dark:bg-black animate__animated animate__zoomIn sm:w-6/12 lg:w-4/12 xl:w-3/12"
+            @click.away="modal = false">
+            <div class="flex mb-2 text-lg">
                 {{ __('Are you sure you want to delete?') }}
             </div>
             <div>
                 <div class="flex">
                     <form wire:submit.prevent="submit"
                           class="delete-form" method="post">
-                        <x-red-save-button class="mr-4 w-24">
+                        <x-red-button class="mr-3 w-20">
                             {{ __('Yes') }}
-                        </x-red-save-button>
+                        </x-red-button>
                     </form>
-                    <x-blue-button class="w-24 capitalize"
+                    <x-blue-button class="w-20 capitalize"
                                    @click="modal = false">
                         {{ __('No') }}
                     </x-blue-button>
                 </div>
             </div>
-        </x-modal>
-    </x-modal-background>
+        </div>
+    </div>
 </div>
